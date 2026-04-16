@@ -1,11 +1,22 @@
-import TablaPersonas from "./TablaPersonas";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Acerca from "./pages/Acerca";
+import Contacto from "./pages/Contacto";
+import Tablas from "./pages/Tablas";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div>
-      <h1>Tabla de Personas</h1>
-      <TablaPersonas />
-    </div>
+    <>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/acerca" element={<Acerca />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/tablas" element={<Tablas />} />
+      </Routes>
+    </>
   );
 }
 
